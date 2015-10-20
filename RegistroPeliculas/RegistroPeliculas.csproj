@@ -87,14 +87,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="VentanaConsultar.resx">
       <DependentUpon>VentanaConsultar.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,13 +127,9 @@
     <None Include="Resources\diez-alternativas-a-peliculas-yonkis-011.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cine.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cine1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="RegPeliculas.sql" />
+    <None Include="Resources\1445324955_search1.png" />
+    <None Include="Resources\1445324955_search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
