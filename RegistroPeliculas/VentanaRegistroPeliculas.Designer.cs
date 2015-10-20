@@ -49,6 +49,9 @@
             this.Estudioslabel = new System.Windows.Forms.Label();
             this.EstudiosCGcomboBox = new System.Windows.Forms.ComboBox();
             this.RegistroPelislabel = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Agregarbutton1 = new System.Windows.Forms.Button();
+            this.GeneroscomboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // IMDBtextBox
@@ -234,15 +237,47 @@
             this.RegistroPelislabel.TabIndex = 32;
             this.RegistroPelislabel.Text = "Registro de Peliculas ";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(112, 345);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(282, 21);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ActorescomboBox_SelectedIndexChanged);
+            // 
+            // Agregarbutton1
+            // 
+            this.Agregarbutton1.Location = new System.Drawing.Point(509, 294);
+            this.Agregarbutton1.Name = "Agregarbutton1";
+            this.Agregarbutton1.Size = new System.Drawing.Size(75, 23);
+            this.Agregarbutton1.TabIndex = 33;
+            this.Agregarbutton1.Text = "Agregar";
+            this.Agregarbutton1.UseVisualStyleBackColor = true;
+            this.Agregarbutton1.Click += new System.EventHandler(this.Agregarbutton1_Click);
+            // 
+            // GeneroscomboBox1
+            // 
+            this.GeneroscomboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GeneroscomboBox1.FormattingEnabled = true;
+            this.GeneroscomboBox1.Location = new System.Drawing.Point(400, 296);
+            this.GeneroscomboBox1.Name = "GeneroscomboBox1";
+            this.GeneroscomboBox1.Size = new System.Drawing.Size(103, 21);
+            this.GeneroscomboBox1.TabIndex = 34;
+            // 
             // VentanaRegistroPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(805, 646);
+            this.Controls.Add(this.GeneroscomboBox1);
+            this.Controls.Add(this.Agregarbutton1);
             this.Controls.Add(this.RegistroPelislabel);
             this.Controls.Add(this.EstudiosCGcomboBox);
             this.Controls.Add(this.Estudioslabel);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.ActorescomboBox);
             this.Controls.Add(this.Actoreslabel);
             this.Controls.Add(this.GeneroscomboBox);
@@ -291,5 +326,8 @@
         private System.Windows.Forms.Label Estudioslabel;
         private System.Windows.Forms.ComboBox EstudiosCGcomboBox;
         private System.Windows.Forms.Label RegistroPelislabel;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button Agregarbutton1;
+        private System.Windows.Forms.ComboBox GeneroscomboBox1;
     }
 }

@@ -36,18 +36,18 @@ namespace MoviesOrganizer
                 rp.Descripcion = DescripcionrichTextBox.Text; 
                 if (rp.Insertar())
                 {
-
+                       
                     TitulotextBox.Clear();
                     AnotextBox.Clear();
                     CalificaciontextBox.Clear();
                     IMDBtextBox.Clear();
                     CategoriaIDtextBox.Clear();
                     DescripcionrichTextBox.Clear();
-                    MessageBox.Show("Pelicula se guardo Correctamente");
+                    MessageBox.Show("Pelicula no se guardo Correctamente");
                 }
                 else
                 {
-                    MessageBox.Show("Pelicula no se guardo Correctamente");
+                    MessageBox.Show("Pelicula se guardo Correctamente");
                 }
             }
             else
@@ -102,6 +102,16 @@ namespace MoviesOrganizer
             {
                 EstudiosCGcomboBox.Items.Add(estudios.Listado("Nombre", "1=1", "").Rows[i]["Nombre"]);
             }
+
+            for (int i = 0; i < genero.Listado("Descripcion", "1=1", "").Rows.Count; i++)
+            {
+                GeneroscomboBox1.Items.Add(genero.Listado("Descripcion", "1=1", "").Rows[i]["Descripcion"]);
+            }
+        }
+
+        private void Agregarbutton1_Click(object sender, EventArgs e)
+        {
+             
         }
     }
          
