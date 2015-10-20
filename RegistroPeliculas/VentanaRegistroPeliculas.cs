@@ -108,10 +108,10 @@ namespace MoviesOrganizer
                 GeneroscomboBox1.Items.Add(genero.Listado("Descripcion", "1=1", "").Rows[i]["Descripcion"]);
             }
         }
-
+         
         private void Agregarbutton1_Click(object sender, EventArgs e)
         {
-             
+              
         }
     }
          
