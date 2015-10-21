@@ -22,7 +22,7 @@ namespace MoviesOrganizer
             if (ActorIdtextBox.TextLength == 0)
             {
                 Actores actor = new Actores();
-                actor.nombre = NomActortextBox.Text;
+                actor.Nombre = NomActortextBox.Text;
                 if (actor.Insertar())
                 {
                     MessageBox.Show("Actor no se guardo Correctamente");
@@ -36,8 +36,8 @@ namespace MoviesOrganizer
             else
             {
                 Actores actor = new Actores();
-                actor.actorId = Convert.ToInt32(ActorIdtextBox.Text);
-                actor.nombre = NomActortextBox.Text;
+                actor.ActorId = Convert.ToInt32(ActorIdtextBox.Text);
+                actor.Nombre = NomActortextBox.Text;
                 if (actor.Editar())
                 {
                     MessageBox.Show("Actor se guardo Correctamente");
@@ -55,7 +55,7 @@ namespace MoviesOrganizer
             if(ActorIdtextBox.TextLength > 0)
             {
                 Actores actor = new Actores();
-                actor.actorId = Convert.ToInt32(ActorIdtextBox.Text);
+                actor.ActorId = Convert.ToInt32(ActorIdtextBox.Text);
                 actor.Eliminar();
                 MessageBox.Show("Actor se elimino Correctamente");
             }else

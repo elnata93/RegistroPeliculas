@@ -109,7 +109,7 @@
             this.RegGenlabel.TabIndex = 9;
             this.RegGenlabel.Text = "Registro de Generos";
             // 
-            // VentanaRegGeneros
+            // VentanaRegistroGeneros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,8 +122,9 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Descripcionlabel);
             this.Controls.Add(this.DescripciontextBox);
-            this.Name = "VentanaRegGeneros";
+            this.Name = "VentanaRegistroGeneros";
             this.Text = "VentanaRegGeneros";
+            this.Load += new System.EventHandler(this.VentanaRegistroGeneros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

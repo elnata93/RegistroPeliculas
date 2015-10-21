@@ -9,13 +9,13 @@ namespace BLL
 {
     public class Generos : ClaseMaestra
     {
-        public int generoId { get; set; }
-        public string descripcion { get; set; }
+        public int GeneroId { get; set; }
+        public string Descripcion { get; set; }
 
         public Generos()
         {
-            this.generoId = 0;
-            this.descripcion = "";
+            this.GeneroId = 0;
+            this.Descripcion = "";
         }
 
         public override bool Consultar(int IdBuscado)
@@ -24,8 +24,8 @@ namespace BLL
             try
             {
                 DataTable datatable;
-                datatable = conexion.ObtenerDatos(String.Format("select *  from Generos where GeneroId = {0}",this.generoId));
-                this.descripcion = datatable.Rows[0]["Descripcion"].ToString();
+                datatable = conexion.ObtenerDatos(String.Format("select *  from Generos where GeneroId = {0}",this.GeneroId));
+                this.Descripcion = datatable.Rows[0]["Descripcion"].ToString();
                 return true;
             }
             catch (Exception)
@@ -40,7 +40,7 @@ namespace BLL
             bool retorno = false;
 
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("update Generos set Descripcion ='{0}' where GeneroId = {1}",this.descripcion,this.generoId));
+            conexion.Ejecutar(string.Format("update Generos set Descripcion ='{0}' where GeneroId = {1}",this.Descripcion,this.GeneroId));
             return retorno;
         }
 
@@ -49,7 +49,7 @@ namespace BLL
             bool retorno = false;
 
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("delete from Generos where GeneroId = {0}", this.generoId));
+            conexion.Ejecutar(string.Format("delete from Generos where GeneroId = {0}", this.GeneroId));
             return retorno;
         }
 
@@ -58,7 +58,7 @@ namespace BLL
             bool retorno = false;
 
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("Insert Into Generos (Descripcion) values('{0}')", this.descripcion));
+            conexion.Ejecutar(string.Format("Insert Into Generos (Descripcion) values('{0}')", this.Descripcion));
             return retorno;
         }
 

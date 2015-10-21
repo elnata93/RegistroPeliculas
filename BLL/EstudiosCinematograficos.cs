@@ -9,13 +9,13 @@ namespace BLL
 {
     public class EstudiosCinematograficos : ClaseMaestra
     {
-        public int estudioId { get; set; }
-        public string nombre { get; set; }
+        public int EstudioId { get; set; }
+        public string Nombre { get; set; }
 
         public EstudiosCinematograficos()
         {
-            this.estudioId = 0;
-            this.nombre = "";
+            this.EstudioId = 0;
+            this.Nombre = "";
         }
         public override bool Consultar(int IdBuscado)
         {
@@ -23,8 +23,8 @@ namespace BLL
             try
             {
                 DataTable datatable;
-                datatable = conexion.ObtenerDatos(string.Format("select * from Estudios where EstudioId = {0}", estudioId));
-                this.nombre = datatable.Rows[0]["Nombre"].ToString();
+                datatable = conexion.ObtenerDatos(string.Format("select * from Estudios where EstudioId = {0}", EstudioId));
+                this.Nombre = datatable.Rows[0]["Nombre"].ToString();
                 return true;
             }
             catch (Exception)
@@ -37,7 +37,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("update Estudios set Nombre = '{0}' where EstudioId = {1}", this.nombre, this.estudioId));
+            conexion.Ejecutar(string.Format("update Estudios set Nombre = '{0}' where EstudioId = {1}", this.Nombre, this.EstudioId));
             return retorno;
         }
 
@@ -45,7 +45,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("delete from Estudios where EstudioId = {0}", this.estudioId));
+            conexion.Ejecutar(string.Format("delete from Estudios where EstudioId = {0}", this.EstudioId));
             return retorno;
         }
 
@@ -53,7 +53,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("Insert Into Estudios (Nombre) values('{0}')", this.nombre));
+            conexion.Ejecutar(string.Format("Insert Into Estudios (Nombre) values('{0}')", this.Nombre));
             return retorno;
         }
 

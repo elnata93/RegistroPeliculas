@@ -23,7 +23,7 @@ namespace MoviesOrganizer
             {
                 EstudiosCinematograficos  estudio = new EstudiosCinematograficos();
 
-                estudio.nombre = NombreEstudiotextBox.Text;
+                estudio.Nombre = NombreEstudiotextBox.Text;
                 if (estudio.Insertar())
                 {
                     MessageBox.Show("Estudio Cinematografico no se guardo Correctamente");
@@ -37,8 +37,8 @@ namespace MoviesOrganizer
             {
                 EstudiosCinematograficos estudio = new EstudiosCinematograficos();
 
-                estudio.estudioId = Convert.ToInt32(EstudioIdtextBox.Text);
-                estudio.nombre = NombreEstudiotextBox.Text;
+                estudio.EstudioId = Convert.ToInt32(EstudioIdtextBox.Text);
+                estudio.Nombre = NombreEstudiotextBox.Text;
                 if (estudio.Editar())
                 {
                     MessageBox.Show("Estudio Cinematografico no se edito Correctamente");
@@ -56,7 +56,7 @@ namespace MoviesOrganizer
             if(EstudioIdtextBox.TextLength > 0)
             {
                 EstudiosCinematograficos estudio = new EstudiosCinematograficos();
-                estudio.estudioId = Convert.ToInt32(EstudioIdtextBox.Text);
+                estudio.EstudioId = Convert.ToInt32(EstudioIdtextBox.Text);
                 estudio.Eliminar();
                 MessageBox.Show("Estudio Cinematografico se elimino Correctamente");
             }

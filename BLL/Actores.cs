@@ -9,13 +9,13 @@ namespace BLL
 {
     public class Actores : ClaseMaestra
     {
-        public int actorId { get; set; }
-        public string nombre { get; set; }
+        public int ActorId { get; set; }
+        public string Nombre { get; set; }
 
         public Actores()
         {
-            this.actorId = 0;
-            this.nombre = "";
+            this.ActorId = 0;
+            this.Nombre = "";
         }
         public override bool Consultar(int IdBuscado)
         {
@@ -23,8 +23,8 @@ namespace BLL
             try
             {
                 DataTable datatable;
-                datatable = conexion.ObtenerDatos(String.Format("select * from Actores whele ActorId = {0}", actorId));
-                this.nombre = datatable.Rows[0]["Nombre"].ToString();
+                datatable = conexion.ObtenerDatos(String.Format("select * from Actores whele ActorId = {0}", ActorId));
+                this.Nombre = datatable.Rows[0]["Nombre"].ToString();
                 return true;
             }catch (Exception)
             {
@@ -36,7 +36,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("update Actores set Nombre = '{0}' where ActorId = {1}", this.nombre, this.actorId));
+            conexion.Ejecutar(string.Format("update Actores set Nombre = '{0}' where ActorId = {1}", this.Nombre, this.ActorId));
             return retorno;
         }
 
@@ -44,7 +44,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("delete from Actores where ActorId = {0}",this.actorId));
+            conexion.Ejecutar(string.Format("delete from Actores where ActorId = {0}",this.ActorId));
             return retorno;
         }
 
@@ -52,7 +52,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(string.Format("Insert Into Actores (Nombre) values('{0}')", this.nombre));
+            conexion.Ejecutar(string.Format("Insert Into Actores (Nombre) values('{0}')", this.Nombre));
             return retorno;
         }
 

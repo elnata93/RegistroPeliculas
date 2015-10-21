@@ -23,7 +23,7 @@ namespace MoviesOrganizer
             {
                 Generos genero = new Generos();
 
-                genero.descripcion = DescripciontextBox.Text;
+                genero.Descripcion = DescripciontextBox.Text;
                 if (genero.Insertar())
                 {
                     MessageBox.Show("Genero no se guardo Correctamente");
@@ -37,8 +37,8 @@ namespace MoviesOrganizer
              {
                 Generos genero = new Generos();
 
-                genero.generoId = Convert.ToInt32(GeneroIdtextBox.Text);
-                genero.descripcion = DescripciontextBox.Text;
+                genero.GeneroId = Convert.ToInt32(GeneroIdtextBox.Text);
+                genero.Descripcion = DescripciontextBox.Text;
                 if (genero.Editar()) 
                 {
                     MessageBox.Show("Genero se edito Correctamente");
@@ -59,7 +59,7 @@ namespace MoviesOrganizer
             {
                 Generos genero = new Generos();
 
-                genero.generoId = Convert.ToInt32(GeneroIdtextBox.Text);
+                genero.GeneroId = Convert.ToInt32(GeneroIdtextBox.Text);
                 genero.Eliminar();
                 MessageBox.Show("Genero se elimino Correctamente");
             }
@@ -74,6 +74,11 @@ namespace MoviesOrganizer
            
             GeneroIdtextBox.Clear();
             DescripciontextBox.Clear();
+        }
+
+        private void VentanaRegistroGeneros_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

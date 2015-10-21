@@ -107,8 +107,14 @@ namespace MoviesOrganizer
             {
                 GeneroscomboBox1.Items.Add(genero.Listado("Descripcion", "1=1", "").Rows[i]["Descripcion"]);
             }
+
+            for (int i = 0; i < genero.Listado("Nombre", "1=1", "").Rows.Count; i++)
+            {
+                ActorescomboBox1.Items.Add(estudios.Listado("Nombre", "1=1", "").Rows[i]["Nombre"]);
+            }
+
         }
-         
+
         private void Agregarbutton1_Click(object sender, EventArgs e)
         {
               
