@@ -63,79 +63,9 @@ namespace MoviesOrganizer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1445324426_search {
-            get {
-                object obj = ResourceManager.GetObject("1445324426_search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1445324552_search {
-            get {
-                object obj = ResourceManager.GetObject("1445324552_search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1445324955_search {
-            get {
-                object obj = ResourceManager.GetObject("1445324955_search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1445324955_search1 {
-            get {
-                object obj = ResourceManager.GetObject("1445324955_search1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cine {
-            get {
-                object obj = ResourceManager.GetObject("cine", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cine1 {
-            get {
-                object obj = ResourceManager.GetObject("cine1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap diez_alternativas_a_peliculas_yonkis_01 {
             get {
                 object obj = ResourceManager.GetObject("diez-alternativas-a-peliculas-yonkis-01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap diez_alternativas_a_peliculas_yonkis_011 {
-            get {
-                object obj = ResourceManager.GetObject("diez-alternativas-a-peliculas-yonkis-011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -9,7 +9,7 @@ namespace BLL
 {
     public class RegistroPeliculas : ClaseMaestra
     {
-        public int PeliculasId { get; set; }
+        public int PeliculaId { get; set; }
         public string Titulo { get; set; }
         public int Ano { get; set; }
         public int Calificacion { get; set; }
@@ -22,7 +22,7 @@ namespace BLL
 
         public RegistroPeliculas()
         {
-            this.PeliculasId = 0;
+            this.PeliculaId = 0;
             this.Titulo = "";
             this.Ano = 0;
             this.Calificacion = 0;
@@ -36,7 +36,7 @@ namespace BLL
 
         public RegistroPeliculas(int peliculasid,string titulo,int ano,int calificacion,int imdb,int categoriaid, string genero,string actor,string estudio,string descripcion)
         {
-            this.PeliculasId = peliculasid;
+            this.PeliculaId = peliculasid;
             this.Titulo = titulo;
             this.Ano = ano;
             this.Calificacion = calificacion;
@@ -78,17 +78,56 @@ namespace BLL
 
         public override bool Editar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            ConexionDb conexion = new ConexionDb();
+            conexion.Ejecutar(String.Format("update Peliculas set Titulo='{0}',Ano='{1}',Calificacion='{2}',IMDB='{3}',CategoriaId='{4}',Genero='{5}',Actor='{6}',Estudio='{7}',Descripcion='{8}'where PeliculaId='{9}'", this.Titulo, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.Actor, this.Estudio, this.Descripcion,this.PeliculaId));
+
+            return retorno;
         }
 
         public override bool Eliminar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+
+            ConexionDb conexion = new ConexionDb();
+
+            conexion.Ejecutar(string.Format("delete  from  Peliculas where PeliculaId={0} ", this.PeliculaId));
+
+            return retorno;
         }
 
         public override bool Consultar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            /*ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
+            DataTable dtActores = new DataTable();
+
+            dt = conexion.ObtenerDatos(String.Format("select  PeliculaId,Titulo,Descripcion,Ano,Calificacion,IMBD, CategoriaId,Foto,Video from Peliculas where PeliculaId='{0}'", IdBuscado));
+            if (dt.Rows.Count > 0)
+            {
+                this.PeliculaId = (int)dt.Rows[0]["PeliculaId"];
+                this.Titulo = dt.Rows[0]["Titulo"].ToString();
+                this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
+                this.Ano = (int)dt.Rows[0]["Ano"];
+                this.Calificacion = (int)dt.Rows[0]["Calificacion"];
+
+
+                dtActores = conexion.ObtenerDatos("Select p.ActorId,a.Nombre " +
+                                                    "From PeliculasActores p " +
+                                                    "Inner Join Actores a On p.ActorId=a.ActorId" +
+                                                    "Where p.PeliculaId=" + this.PeliculaId);
+
+                foreach (DataRow row in dtActores.Rows)
+                {
+                    this.((int)row["ActorId"], row["Nombre"].ToString());
+                }
+            }
+
+                return dt.Rows.Count > 0;
+            }*/
+
+            return retorno;
         }
     }
 }

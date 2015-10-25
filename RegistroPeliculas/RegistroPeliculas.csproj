@@ -50,6 +50,11 @@
     <Compile Include="Interfaz.Designer.cs">
       <DependentUpon>Interfaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentanaConsultar.cs">
@@ -87,7 +92,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaConsultar.resx">
       <DependentUpon>VentanaConsultar.cs</DependentUpon>
@@ -121,15 +126,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diez-alternativas-a-peliculas-yonkis-01.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\diez-alternativas-a-peliculas-yonkis-011.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="RegPeliculas.sql" />
-    <None Include="Resources\1445324955_search1.png" />
-    <None Include="Resources\1445324955_search.png" />
+    <None Include="Resources\diez-alternativas-a-peliculas-yonkis-01.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
