@@ -34,7 +34,7 @@
             // 
             // VisorGenerosbutton
             // 
-            this.VisorGenerosbutton.Location = new System.Drawing.Point(86, 39);
+            this.VisorGenerosbutton.Location = new System.Drawing.Point(89, 71);
             this.VisorGenerosbutton.Name = "VisorGenerosbutton";
             this.VisorGenerosbutton.Size = new System.Drawing.Size(104, 23);
             this.VisorGenerosbutton.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // VisorActoresbutton
             // 
-            this.VisorActoresbutton.Location = new System.Drawing.Point(86, 91);
+            this.VisorActoresbutton.Location = new System.Drawing.Point(89, 123);
             this.VisorActoresbutton.Name = "VisorActoresbutton";
             this.VisorActoresbutton.Size = new System.Drawing.Size(104, 23);
             this.VisorActoresbutton.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 147);
+            this.ClientSize = new System.Drawing.Size(281, 213);
             this.Controls.Add(this.VisorActoresbutton);
             this.Controls.Add(this.VisorGenerosbutton);
             this.Name = "VentanaVisorReport";
