@@ -17,6 +17,13 @@ namespace BLL
             this.ActorId = 0;
             this.Nombre = "";
         }
+
+        public Actores(int actorId, string nombre)
+        {
+            ActorId = actorId;
+            Nombre = nombre;
+        }
+
         public override bool Consultar(int IdBuscado)
         {
             ConexionDb conexion = new ConexionDb();

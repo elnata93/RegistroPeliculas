@@ -9,14 +9,16 @@ namespace BLL
 {
     public class RegistroPeliculas : ClaseMaestra
     {
+        ConexionDb conexion = new ConexionDb();
+
         public int PeliculaId { get; set; }
         public string Titulo { get; set; }
         public int Ano { get; set; }
         public int Calificacion { get; set; }
         public int IMDB { get; set; }
         public int CategoriaId { get; set; }
-        public string Genero { get; set; }  
-        public string Actor { get; set; }  
+        public string Genero { get; set; }
+        public string Actor { get; set; }
         public string Estudio { get; set; }
         public string Descripcion { get; set; }
 
@@ -32,9 +34,10 @@ namespace BLL
             this.Actor = "";
             this.Estudio = "";
             this.Descripcion = "";
+            Actores = new List<Actores>();
         }
 
-        public RegistroPeliculas(int peliculasid,string titulo,int ano,int calificacion,int imdb,int categoriaid, string genero,string actor,string estudio,string descripcion)
+        public RegistroPeliculas(int peliculasid, string titulo, int ano, int calificacion, int imdb, int categoriaid, string genero, string actor, string estudio, string descripcion)
         {
             this.PeliculaId = peliculasid;
             this.Titulo = titulo;
@@ -46,41 +49,67 @@ namespace BLL
             this.Actor = actor;
             this.Estudio = estudio;
             this.Descripcion = descripcion;
+
         }
 
+        public List<Actores> Actores { get; set; }
+
+       
+
+        public void AgregarActor(int ActorId, string Nombre)
+        {
+            this.Actores.Add(new Actores(ActorId, Nombre));
+        }
 
         public override bool Insertar()
         {
-            bool retorno = false;
-
-            ConexionDb conexion = new ConexionDb();
+            /*bool retorno = false;
 
             conexion.Ejecutar(String.Format("Insert Into Peliculas (Titulo,Ano,Calificacion,IMDB,CategoriaId,Genero,Actor,Estudio,Descripcion) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", this.Titulo,this.Ano,this.Calificacion,this.IMDB,this.CategoriaId,this.Genero,this.Actor,this.Estudio,this.Descripcion));
+
+            return retorno;*/
+
+            bool retorno = false;
+            StringBuilder Comando = new StringBuilder();
+
+            retorno = conexion.Ejecutar(String.Format("insert into Peliculas(Titulo,Ano,Calificacion,IMBD, CategoriaId,Genero,Actor,Estudio,Descripcion) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}')", this.Titulo, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.Actor, this.Estudio, this.Descripcion));
+            if (retorno)
+            {
+                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) as PeliculaId from Peliculas").Rows[0]["PeliculaId"];
+
+                foreach (var actor in this.Actores)
+                {
+                    Comando.AppendLine(String.Format("insert into PeliculasActores(PeliculaId,ActorId) Values({0},{1});", this.PeliculaId, actor.ActorId));
+
+                }
+
+                retorno = conexion.Ejecutar(Comando.ToString());
+            }
 
             return retorno;
 
         }
 
-        public DataTable Consultar(string campo,string consulta)
+        public DataTable Consultar(string campo, string consulta)
         {
             ConexionDb conexion = new ConexionDb();
 
-            return conexion.ObtenerDatos("select * from Peliculas where "+campo+ " = "+consulta);
-            
+            return conexion.ObtenerDatos("select * from Peliculas where " + campo + " = " + consulta);
+
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             ConexionDb conexion = new ConexionDb();
 
-                return conexion.ObtenerDatos("select " +Campos +" from where "+Condicion +Orden);
+            return conexion.ObtenerDatos("select " + Campos + " from where " + Condicion + Orden);
         }
 
         public override bool Editar()
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            conexion.Ejecutar(String.Format("update Peliculas set Titulo='{0}',Ano='{1}',Calificacion='{2}',IMDB='{3}',CategoriaId='{4}',Genero='{5}',Actor='{6}',Estudio='{7}',Descripcion='{8}'where PeliculaId='{9}'", this.Titulo, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.Actor, this.Estudio, this.Descripcion,this.PeliculaId));
+            conexion.Ejecutar(String.Format("update Peliculas set Titulo='{0}',Ano='{1}',Calificacion='{2}',IMDB='{3}',CategoriaId='{4}',Genero='{5}',Actor='{6}',Estudio='{7}',Descripcion='{8}'where PeliculaId='{9}'", this.Titulo, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.Actor, this.Estudio, this.Descripcion, this.PeliculaId));
 
             return retorno;
         }

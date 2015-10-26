@@ -32,8 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,6 +94,24 @@
     <Compile Include="VentanaRegistroEstudioCinematografico.Designer.cs">
       <DependentUpon>VentanaRegistroEstudioCinematografico.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaVisorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaVisorReport.Designer.cs">
+      <DependentUpon>VentanaVisorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisorActoresReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorActoresReport.Designer.cs">
+      <DependentUpon>VisorActoresReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisorGenerosReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorGenerosReport.Designer.cs">
+      <DependentUpon>VisorGenerosReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Interfaz.resx">
       <DependentUpon>Interfaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +133,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaRegistroEstudioCinematografico.resx">
       <DependentUpon>VentanaRegistroEstudioCinematografico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVisorReport.resx">
+      <DependentUpon>VentanaVisorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorActoresReport.resx">
+      <DependentUpon>VisorActoresReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorGenerosReport.resx">
+      <DependentUpon>VisorGenerosReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

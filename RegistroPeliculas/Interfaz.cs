@@ -49,5 +49,11 @@ namespace MoviesOrganizer
             VentanaRegistroEstudioCinematografico vrec = new VentanaRegistroEstudioCinematografico();
             vrec.Show();
         }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaVisorReport vsp = new VentanaVisorReport();
+            vsp.ShowDialog();
+        }
     }
 }
